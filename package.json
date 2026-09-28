@@ -1,0 +1,39 @@
+{
+  "name": "@cubyt/style",
+  "version": "1.0.0",
+  "description": "Shared CSS design tokens and brand assets for Cubyt products",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CubytsAS/package-styles.git"
+  },
+  "homepage": "https://github.com/CubytsAS/package-styles#readme",
+  "bugs": {
+    "url": "https://github.com/CubytsAS/package-styles/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "./tokens.css",
+    "./tailwind.css",
+    "./brand.css"
+  ],
+  "exports": {
+    ".": "./tokens.css",
+    "./tokens.css": "./tokens.css",
+    "./tailwind.css": "./tailwind.css",
+    "./brand.css": "./brand.css",
+    "./assets/logo.svg": "./assets/logo.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "tokens.css",
+    "tailwind.css",
+    "brand.css",
+    "assets/logo.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

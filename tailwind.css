@@ -1,0 +1,37 @@
+/* Tailwind CSS v4 utility mappings for Cubyt tokens. */
+@theme inline {
+  --font-sans: var(--brand-font-sans);
+  --font-mono: var(--brand-font-mono);
+  --radius-sm: var(--brand-radius-sm);
+  --radius-md: var(--brand-radius-md);
+  --radius-lg: var(--brand-radius-lg);
+  --radius-full: var(--brand-radius-pill);
+
+  --color-canvas: var(--ui-canvas);
+  --color-surface: var(--ui-surface);
+  --color-surface-soft: var(--ui-surface-soft);
+  --color-surface-raised: var(--ui-surface-raised);
+  --color-ink: var(--ui-ink);
+  --color-ink-strong: var(--ui-ink-strong);
+  --color-muted: var(--ui-muted);
+  --color-subtle: var(--ui-subtle);
+  --color-border-default: var(--ui-border);
+  --color-border-subtle: var(--ui-border-subtle);
+  --color-accent: var(--ui-accent);
+  --color-action: var(--ui-action);
+  --color-action-hover: var(--ui-action-hover);
+  --color-on-action: var(--ui-on-action);
+
+  --color-discord: var(--ui-discord);
+  --color-google-blue: var(--ui-google-blue);
+  --color-google-red: var(--ui-google-red);
+  --color-google-yellow: var(--ui-google-yellow);
+  --color-google-green: var(--ui-google-green);
+  --color-status-warning: var(--ui-status-warning);
+  --color-status-success: var(--ui-status-success);
+
+  --color-cubyt-ink: var(--ui-ink-strong);
+  --color-cubyt-muted: var(--ui-muted);
+  --color-cubyt-line: var(--ui-border);
+  --color-cubyt-blue: var(--ui-google-blue);
+}

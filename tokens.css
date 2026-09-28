@@ -1,0 +1,54 @@
+/* Cubyt brand and UI tokens. Import this file once in an application's global CSS. */
+:root {
+  color-scheme: light;
+
+  --brand-font-sans: Geist, Inter, ui-sans-serif, system-ui, sans-serif;
+  --brand-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  --brand-radius-sm: 10px;
+  --brand-radius-md: 14px;
+  --brand-radius-lg: 20px;
+  --brand-radius-pill: 999px;
+
+  --ui-canvas: #ffffff;
+  --ui-surface: #ffffff;
+  --ui-surface-soft: #f5f7fa;
+  --ui-surface-raised: #f2f3f5;
+  --ui-ink: #111827;
+  --ui-ink-strong: #111111;
+  --ui-muted: #647084;
+  --ui-subtle: #7d8795;
+  --ui-border: #e5e9ee;
+  --ui-border-subtle: rgb(17 24 39 / 8%);
+  --ui-accent: #12684f;
+  --ui-action: #111111;
+  --ui-action-hover: #343434;
+  --ui-on-action: #ffffff;
+
+  --ui-discord: #5865f2;
+  --ui-google-blue: #4285f4;
+  --ui-google-red: #ea4335;
+  --ui-google-yellow: #fbbc05;
+  --ui-google-green: #34a853;
+  --ui-status-warning: #d18b62;
+  --ui-status-success: #57ad86;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --ui-canvas: #14171d;
+    --ui-surface: #1f222a;
+    --ui-surface-soft: #20252e;
+    --ui-surface-raised: #30343d;
+    --ui-ink: #e6e9ef;
+    --ui-ink-strong: #f1f3f7;
+    --ui-muted: #b8c0cd;
+    --ui-subtle: #929baa;
+    --ui-border: rgb(255 255 255 / 14%);
+    --ui-border-subtle: rgb(255 255 255 / 9%);
+    --ui-accent: #55c69a;
+    --ui-action: #30343d;
+    --ui-action-hover: #414751;
+  }
+}
