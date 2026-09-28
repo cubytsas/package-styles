@@ -31,6 +31,7 @@
     "brand.css",
     "assets/logo.svg",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "publishConfig": {
