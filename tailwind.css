@@ -5,6 +5,7 @@
   --radius-sm: var(--brand-radius-sm);
   --radius-md: var(--brand-radius-md);
   --radius-lg: var(--brand-radius-lg);
+  --radius-xl: var(--brand-radius-xl);
   --radius-full: var(--brand-radius-pill);
 
   --color-canvas: var(--ui-canvas);
@@ -29,6 +30,25 @@
   --color-google-green: var(--ui-google-green);
   --color-status-warning: var(--ui-status-warning);
   --color-status-success: var(--ui-status-success);
+
+  --color-accent-soft: var(--ui-accent-soft);
+  --color-accent-border: var(--ui-accent-border);
+  --color-accent-strong: var(--ui-accent-strong);
+  --color-danger: var(--ui-danger);
+  --color-danger-hover: var(--ui-danger-hover);
+  --color-danger-soft: var(--ui-danger-soft);
+  --color-danger-border: var(--ui-danger-border);
+  --color-danger-ink: var(--ui-danger-ink);
+  --color-warning: var(--ui-warning);
+  --color-warning-soft: var(--ui-warning-soft);
+  --color-warning-border: var(--ui-warning-border);
+  --color-info: var(--ui-info);
+  --color-info-soft: var(--ui-info-soft);
+  --color-info-border: var(--ui-info-border);
+  --color-field: var(--ui-field);
+  --color-field-border: var(--ui-field-border);
+  --color-scrim: var(--ui-scrim);
+  --shadow-overlay: var(--ui-shadow-overlay);
 
   --color-cubyt-ink: var(--ui-ink-strong);
   --color-cubyt-muted: var(--ui-muted);

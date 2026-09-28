@@ -1,11 +1,11 @@
 {
   "name": "@cubyt/style",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared CSS design tokens and brand assets for Cubyt products",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CubytsAS/package-styles.git"
+    "url": "git+https://github.com/cubytsas/package-styles.git"
   },
   "homepage": "https://github.com/CubytsAS/package-styles#readme",
   "bugs": {

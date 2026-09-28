@@ -28,6 +28,11 @@ Import the tokens once in the application's global stylesheet:
 }
 ```
 
+Overlay tokens used by `@cubyt/ui`, `@cubyt/modals` and `@cubyt/toasts` are also
+included: `--ui-accent-soft`, `--ui-accent-border`, `--ui-danger*`,
+`--ui-warning*`, `--ui-info*`, `--ui-field`, `--ui-field-border`, `--ui-scrim`,
+`--ui-shadow-overlay` and `--brand-radius-xl`.
+
 The palette switches between light and dark using `prefers-color-scheme`. Any
 consumer can override that behavior by setting the token variables on its own
 theme root after importing the package.

@@ -7,6 +7,7 @@
   --brand-radius-sm: 10px;
   --brand-radius-md: 14px;
   --brand-radius-lg: 20px;
+  --brand-radius-xl: 18px;
   --brand-radius-pill: 999px;
 
   --ui-canvas: #ffffff;
@@ -31,6 +32,25 @@
   --ui-google-green: #34a853;
   --ui-status-warning: #d18b62;
   --ui-status-success: #57ad86;
+
+  --ui-accent-soft: #f7fdf9;
+  --ui-accent-border: #c8ebd6;
+  --ui-accent-strong: #1f7a4d;
+  --ui-danger: #b42318;
+  --ui-danger-hover: #912018;
+  --ui-danger-soft: #fef3f2;
+  --ui-danger-border: rgb(240 68 56 / 20%);
+  --ui-danger-ink: #912018;
+  --ui-warning: #b54708;
+  --ui-warning-soft: #fffaeb;
+  --ui-warning-border: #fedf89;
+  --ui-info: #3d5bd9;
+  --ui-info-soft: #f7f8fc;
+  --ui-info-border: #dfe4f7;
+  --ui-field: #fafafa;
+  --ui-field-border: rgb(0 0 0 / 8%);
+  --ui-scrim: rgb(17 17 17 / 40%);
+  --ui-shadow-overlay: 0 16px 40px rgb(0 0 0 / 13%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,5 +70,24 @@
     --ui-accent: #55c69a;
     --ui-action: #30343d;
     --ui-action-hover: #414751;
+
+    --ui-accent-soft: rgb(85 198 154 / 8%);
+    --ui-accent-border: rgb(85 198 154 / 28%);
+    --ui-accent-strong: #7fd8b4;
+    --ui-danger: #e5484d;
+    --ui-danger-hover: #f2555a;
+    --ui-danger-soft: rgb(229 72 77 / 12%);
+    --ui-danger-border: rgb(229 72 77 / 32%);
+    --ui-danger-ink: #ff9592;
+    --ui-warning: #f5a524;
+    --ui-warning-soft: rgb(245 165 36 / 12%);
+    --ui-warning-border: rgb(245 165 36 / 30%);
+    --ui-info: #8da4ef;
+    --ui-info-soft: rgb(141 164 239 / 10%);
+    --ui-info-border: rgb(141 164 239 / 26%);
+    --ui-field: #181b22;
+    --ui-field-border: rgb(255 255 255 / 12%);
+    --ui-scrim: rgb(0 0 0 / 60%);
+    --ui-shadow-overlay: 0 16px 48px rgb(0 0 0 / 50%);
   }
 }
