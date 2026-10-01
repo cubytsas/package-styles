@@ -53,8 +53,48 @@
   --ui-shadow-overlay: 0 16px 40px rgb(0 0 0 / 13%);
 }
 
+/* Explicit theme selection: set data-theme on the document root. Omit it or use system to follow the OS. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --ui-canvas: #14171d;
+    --ui-surface: #1f222a;
+    --ui-surface-soft: #20252e;
+    --ui-surface-raised: #30343d;
+    --ui-ink: #e6e9ef;
+    --ui-ink-strong: #f1f3f7;
+    --ui-muted: #b8c0cd;
+    --ui-subtle: #929baa;
+    --ui-border: rgb(255 255 255 / 14%);
+    --ui-border-subtle: rgb(255 255 255 / 9%);
+    --ui-accent: #55c69a;
+    --ui-action: #30343d;
+    --ui-action-hover: #414751;
+
+    --ui-accent-soft: rgb(85 198 154 / 8%);
+    --ui-accent-border: rgb(85 198 154 / 28%);
+    --ui-accent-strong: #7fd8b4;
+    --ui-danger: #e5484d;
+    --ui-danger-hover: #f2555a;
+    --ui-danger-soft: rgb(229 72 77 / 12%);
+    --ui-danger-border: rgb(229 72 77 / 32%);
+    --ui-danger-ink: #ff9592;
+    --ui-warning: #f5a524;
+    --ui-warning-soft: rgb(245 165 36 / 12%);
+    --ui-warning-border: rgb(245 165 36 / 30%);
+    --ui-info: #8da4ef;
+    --ui-info-soft: rgb(141 164 239 / 10%);
+    --ui-info-border: rgb(141 164 239 / 26%);
+    --ui-field: #181b22;
+    --ui-field-border: rgb(255 255 255 / 12%);
+    --ui-scrim: rgb(0 0 0 / 60%);
+    --ui-shadow-overlay: 0 16px 48px rgb(0 0 0 / 50%);
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]),
+  :root[data-theme="system"] {
     color-scheme: dark;
 
     --ui-canvas: #14171d;

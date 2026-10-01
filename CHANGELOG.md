@@ -2,6 +2,14 @@
 
 All notable changes to `@cubyt/style` are documented here.
 
+## [1.1.0] - 2026-10-01
+
+### Added
+
+- Explicit `data-theme="light|dark|system"` selection, while preserving the existing system-preference default.
+- Opt-in form styles for fields, inputs, selects, textareas, checkbox/radio choices, switches, hints, validation errors, focus, and disabled states.
+- `forms.css` package export and usage documentation.
+
 ## [1.0.1] - 2026-09-28
 
 ### Added

@@ -1,0 +1,108 @@
+/* Opt-in Cubyt form controls. Import tokens.css before this file. */
+.cubyt-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  color: var(--ui-ink);
+  font: 500 13px/1.45 var(--brand-font-sans);
+}
+
+.cubyt-label { color: var(--ui-ink); font-weight: 650; }
+.cubyt-hint { color: var(--ui-muted); font-size: 12px; }
+.cubyt-error { color: var(--ui-danger-ink); font-size: 12px; }
+
+:where(.cubyt-input, .cubyt-select, .cubyt-textarea) {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 11px;
+  border: 1px solid var(--ui-field-border);
+  border-radius: var(--brand-radius-sm);
+  background: var(--ui-field);
+  color: var(--ui-ink);
+  font: 450 14px/1.4 var(--brand-font-sans);
+  transition: border-color 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+.cubyt-textarea { min-height: 96px; resize: vertical; }
+.cubyt-select { padding-right: 36px; appearance: none; }
+.cubyt-select-wrap { position: relative; display: block; }
+.cubyt-select-wrap::after {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid var(--ui-muted);
+  border-bottom: 1.5px solid var(--ui-muted);
+  content: "";
+  pointer-events: none;
+  transform: translateY(-70%) rotate(45deg);
+}
+
+:where(.cubyt-input, .cubyt-select, .cubyt-textarea):hover { border-color: var(--ui-border); }
+:where(.cubyt-input, .cubyt-select, .cubyt-textarea):focus-visible {
+  border-color: var(--ui-accent);
+  outline: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ui-accent) 20%, transparent);
+}
+:where(.cubyt-input, .cubyt-select, .cubyt-textarea)[aria-invalid="true"] {
+  border-color: var(--ui-danger);
+}
+:where(.cubyt-input, .cubyt-select, .cubyt-textarea):disabled {
+  cursor: not-allowed;
+  opacity: .58;
+}
+.cubyt-input::placeholder, .cubyt-textarea::placeholder { color: var(--ui-subtle); }
+
+.cubyt-choice {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--ui-ink);
+  font: 450 13px/1.45 var(--brand-font-sans);
+  cursor: pointer;
+}
+.cubyt-choice input {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  accent-color: var(--ui-accent);
+}
+.cubyt-choice input:focus-visible { outline: 2px solid var(--ui-accent); outline-offset: 2px; }
+.cubyt-choice input:disabled { cursor: not-allowed; }
+
+.cubyt-switch { position: relative; display: inline-flex; align-items: center; gap: 10px; color: var(--ui-ink); cursor: pointer; }
+.cubyt-switch input {
+  appearance: none;
+  width: 38px;
+  height: 22px;
+  margin: 0;
+  border: 1px solid var(--ui-field-border);
+  border-radius: var(--brand-radius-pill);
+  background: var(--ui-surface-raised);
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+.cubyt-switch input::before {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border-radius: 50%;
+  background: var(--ui-surface);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+  content: "";
+  transition: transform 140ms ease;
+}
+.cubyt-switch input:checked { border-color: var(--ui-accent); background: var(--ui-accent); }
+.cubyt-switch input:checked::before { transform: translateX(16px); }
+.cubyt-switch input:focus-visible { outline: 2px solid var(--ui-accent); outline-offset: 2px; }
+.cubyt-switch input:disabled { cursor: not-allowed; opacity: .58; }
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.cubyt-input, .cubyt-select, .cubyt-textarea, .cubyt-switch input, .cubyt-switch input::before) {
+    transition-duration: 0.01ms;
+  }
+}

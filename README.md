@@ -1,6 +1,15 @@
 # @cubyt/style
 
-Shared Cubyt brand foundations for colors, typography, radii, the logo mark, and Tailwind CSS v4.
+Shared Cubyt brand foundations for colors, typography, radii, form controls, the logo mark, and Tailwind CSS v4.
+
+## Package map
+
+- `css/tokens.css`: brand and semantic design tokens, including light/dark themes.
+- `css/forms.css`: opt-in form controls built on those tokens.
+- `css/tailwind.css`: Tailwind CSS v4 token mappings.
+- `css/brand.css`: logo mark styles.
+- `assets/`: distributable brand assets.
+- `CHANGELOG.md`: published changes.
 
 ## Install
 
@@ -34,8 +43,46 @@ included: `--ui-accent-soft`, `--ui-accent-border`, `--ui-danger*`,
 `--ui-shadow-overlay` and `--brand-radius-xl`.
 
 The palette switches between light and dark using `prefers-color-scheme`. Any
-consumer can override that behavior by setting the token variables on its own
-theme root after importing the package.
+consumer can select a theme explicitly on the document root. Set `data-theme`
+to `light`, `dark`, or `system`; omitting the attribute also follows the system
+preference. This works for the shared tokens and the form controls below.
+
+```html
+<html data-theme="dark">
+```
+
+## Use shared form controls
+
+Import the controls after the tokens. They are opt-in classes, so existing
+forms keep their current appearance until migrated.
+
+```css
+@import "@cubyt/style/tokens.css";
+@import "@cubyt/style/forms.css";
+```
+
+```html
+<label class="cubyt-field">
+  <span class="cubyt-label">Environment</span>
+  <span class="cubyt-select-wrap">
+    <select class="cubyt-select">
+      <option>Production</option>
+      <option>Staging</option>
+    </select>
+  </span>
+</label>
+
+<label class="cubyt-choice">
+  <input type="checkbox" name="alerts" />
+  Send error alerts
+</label>
+```
+
+Available classes include `cubyt-field`, `cubyt-label`, `cubyt-hint`,
+`cubyt-error`, `cubyt-input`, `cubyt-select`, `cubyt-select-wrap`,
+`cubyt-textarea`, `cubyt-choice`, and `cubyt-switch`. Set
+`aria-invalid="true"` on a field control to show its error border. Compose the
+classes with application-specific layout classes as needed.
 
 ## Use the Cubyt logo
 
@@ -74,6 +121,6 @@ This exposes utilities such as `bg-canvas`, `bg-surface-soft`, `text-ink-strong`
 
 ## Publishing
 
-This package is maintained at [CubytsAS/package-styles](https://github.com/CubytsAS/package-styles). Use its **Publish to npm** GitHub Actions workflow to publish after validating the package contents. The workflow calls the shared organization workflow in [`CubytsAS/.github`](https://github.com/CubytsAS/.github).
+This package is maintained at [CubytsAS/package-styles](https://github.com/CubytsAS/package-styles). See [CONTRIBUTING.md](./CONTRIBUTING.md) for repository conventions and its **Publish to npm** GitHub Actions workflow. The workflow calls the shared organization workflow in [`CubytsAS/.github`](https://github.com/CubytsAS/.github).
 
 The organization must provide an Actions secret named `NPM_TOKEN` with publish access to the `@cubyt` npm scope. Do not commit npm credentials or place them in package files. Increment `version` in `package.json` before publishing; npm versions are immutable.
