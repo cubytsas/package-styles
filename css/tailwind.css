@@ -1,14 +1,39 @@
-/* Tailwind CSS v4 utility mappings for Cubyt tokens. */
+/* Tailwind CSS v4 adapter for Cubyt design tokens. */
 @theme inline {
+  --spacing: 0.25rem;
+
   --font-sans: var(--brand-font-sans);
   --font-mono: var(--brand-font-mono);
+  --text-2xs: var(--brand-text-2xs);
+  --text-xs: var(--brand-text-xs);
+  --text-sm: var(--brand-text-sm);
+  --text-base: var(--brand-text-base);
+  --text-lg: var(--brand-text-lg);
+  --text-xl: var(--brand-text-xl);
+  --text-2xl: var(--brand-text-2xl);
+  --text-3xl: var(--brand-text-3xl);
+  --text-4xl: var(--brand-text-4xl);
+  --leading-tight: var(--brand-leading-tight);
+  --leading-snug: var(--brand-leading-snug);
+  --leading-normal: var(--brand-leading-normal);
+  --leading-relaxed: var(--brand-leading-relaxed);
+  --tracking-tight: var(--brand-tracking-tight);
+  --tracking-normal: var(--brand-tracking-normal);
+  --tracking-wide: var(--brand-tracking-wide);
+  --ease-brand-out: var(--brand-ease-out);
+  --ease-brand-in-out: var(--brand-ease-in-out);
+
+  --radius-xs: var(--brand-radius-xs);
   --radius-sm: var(--brand-radius-sm);
   --radius-md: var(--brand-radius-md);
   --radius-lg: var(--brand-radius-lg);
   --radius-xl: var(--brand-radius-xl);
+  --radius-2xl: var(--brand-radius-2xl);
   --radius-full: var(--brand-radius-pill);
 
   --color-canvas: var(--ui-canvas);
+  --color-canvas-soft: var(--ui-canvas-soft);
+  --color-chat-canvas: var(--ui-chat-canvas);
   --color-surface: var(--ui-surface);
   --color-surface-soft: var(--ui-surface-soft);
   --color-surface-raised: var(--ui-surface-raised);
@@ -18,22 +43,28 @@
   --color-subtle: var(--ui-subtle);
   --color-border-default: var(--ui-border);
   --color-border-subtle: var(--ui-border-subtle);
+  --color-hover: var(--ui-hover);
+  --color-hover-strong: var(--ui-hover-strong);
+  --color-sidebar-hover: var(--ui-sidebar-hover);
+  --color-selected: var(--ui-selected);
+  --color-selected-ink: var(--ui-selected-ink);
+  --color-tooltip: var(--ui-tooltip);
+  --color-tooltip-ink: var(--ui-tooltip-ink);
+
   --color-accent: var(--ui-accent);
+  --color-accent-strong: var(--ui-accent-strong);
+  --color-accent-soft: var(--ui-accent-soft);
+  --color-accent-border: var(--ui-accent-border);
   --color-action: var(--ui-action);
   --color-action-hover: var(--ui-action-hover);
   --color-on-action: var(--ui-on-action);
+  --color-on-accent: var(--ui-on-accent);
+  --color-on-accent-strong: var(--ui-on-accent-strong);
+  --color-focus-ring: var(--ui-focus-ring);
 
-  --color-discord: var(--ui-discord);
-  --color-google-blue: var(--ui-google-blue);
-  --color-google-red: var(--ui-google-red);
-  --color-google-yellow: var(--ui-google-yellow);
-  --color-google-green: var(--ui-google-green);
-  --color-status-warning: var(--ui-status-warning);
-  --color-status-success: var(--ui-status-success);
-
-  --color-accent-soft: var(--ui-accent-soft);
-  --color-accent-border: var(--ui-accent-border);
-  --color-accent-strong: var(--ui-accent-strong);
+  --color-field: var(--ui-field);
+  --color-field-border: var(--ui-field-border);
+  --color-field-hover: var(--ui-field-hover);
   --color-danger: var(--ui-danger);
   --color-danger-hover: var(--ui-danger-hover);
   --color-danger-soft: var(--ui-danger-soft);
@@ -45,13 +76,73 @@
   --color-info: var(--ui-info);
   --color-info-soft: var(--ui-info-soft);
   --color-info-border: var(--ui-info-border);
-  --color-field: var(--ui-field);
-  --color-field-border: var(--ui-field-border);
-  --color-scrim: var(--ui-scrim);
-  --shadow-overlay: var(--ui-shadow-overlay);
+  --color-status-success: var(--ui-status-success);
+  --color-status-warning: var(--ui-status-warning);
 
-  --color-cubyt-ink: var(--ui-ink-strong);
-  --color-cubyt-muted: var(--ui-muted);
-  --color-cubyt-line: var(--ui-border);
-  --color-cubyt-blue: var(--ui-google-blue);
+  --color-discord: var(--ui-discord);
+  --color-google-blue: var(--ui-google-blue);
+  --color-google-red: var(--ui-google-red);
+  --color-google-yellow: var(--ui-google-yellow);
+  --color-google-green: var(--ui-google-green);
+
+  --color-scrim: var(--ui-scrim);
+  --color-overlay: var(--ui-overlay);
+  --color-on-overlay: var(--ui-on-overlay);
+  --shadow-sm: var(--ui-shadow-sm);
+  --shadow-md: var(--ui-shadow-md);
+  --shadow-overlay: var(--ui-shadow-overlay);
+}
+
+@utility bg-brand-gradient {
+  background-image: var(--brand-gradient);
+}
+
+@utility bg-brand-gradient-soft {
+  background-image: var(--brand-gradient-soft);
+}
+
+@utility brand-rule {
+  background-image: var(--brand-gradient);
+  background-size: 220% 100%;
+  animation: cubyt-gradient-drift 2.6s var(--brand-ease-in-out) infinite alternate;
+}
+
+@utility brand-outline {
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--ui-surface), var(--ui-surface)), var(--brand-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100% 100%, 220% 100%;
+  animation: cubyt-outline-drift 2.6s var(--brand-ease-in-out) infinite alternate;
+}
+
+@utility brand-text {
+  background-image: var(--brand-gradient);
+  background-size: 220% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: cubyt-text-shimmer 12s var(--brand-ease-in-out) infinite;
+}
+
+@keyframes cubyt-gradient-drift {
+  from { background-position: 0% 0; }
+  to { background-position: 100% 0; }
+}
+
+@keyframes cubyt-outline-drift {
+  from { background-position: 0 0, 0% 0; }
+  to { background-position: 0 0, 100% 0; }
+}
+
+@keyframes cubyt-text-shimmer {
+  0%, 68%, 100% { background-position: 0% 0; }
+  78%, 88% { background-position: 100% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-rule,
+  .brand-outline,
+  .brand-text {
+    animation: none;
+  }
 }

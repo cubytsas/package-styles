@@ -2,6 +2,21 @@
 
 All notable changes to `@cubyt/style` are documented here.
 
+## [1.2.0] - 2026-10-09
+
+### Added
+
+- Official spacing, type scale, line-height, tracking, motion, elevation, focus, selection, hover, tooltip, and semantic surface tokens.
+- Shared Cubyt mint-to-blue-to-lilac gradients and reusable Tailwind utilities for gradient rules, outlines, text, and soft surfaces.
+- An optional app-wide `base.css` foundation for type rendering, page defaults, selection, focus, and reduced motion.
+- Tailwind mappings for the full design foundation, including typography, semantic interaction states, and elevation.
+
+### Changed
+
+- Refined light and dark palettes to match the current Cubyt product UI and use consistent active and hover states across themes.
+- Reorganized form styles around shared spacing, radius, focus, and field tokens.
+- Fixed the brand mark mask path so the published stylesheet finds its logo asset.
+
 ## [1.1.0] - 2026-10-01
 
 ### Added

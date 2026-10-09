@@ -1,133 +1,256 @@
-/* Cubyt brand and UI tokens. Import this file once in an application's global CSS. */
+/* Cubyt design foundations. Keep product-wide values here; components consume tokens. */
 :root {
   color-scheme: light;
 
-  --brand-font-sans: Geist, Inter, ui-sans-serif, system-ui, sans-serif;
-  --brand-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
-  --brand-radius-sm: 10px;
-  --brand-radius-md: 14px;
-  --brand-radius-lg: 20px;
-  --brand-radius-xl: 18px;
+  /* Typography */
+  --brand-font-sans: Geist, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --brand-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  --brand-text-2xs: 0.6875rem;
+  --brand-text-xs: 0.75rem;
+  --brand-text-sm: 0.8125rem;
+  --brand-text-base: 0.875rem;
+  --brand-text-lg: 1rem;
+  --brand-text-xl: 1.125rem;
+  --brand-text-2xl: 1.375rem;
+  --brand-text-3xl: 1.75rem;
+  --brand-text-4xl: 2.25rem;
+  --brand-leading-tight: 1.2;
+  --brand-leading-snug: 1.35;
+  --brand-leading-normal: 1.5;
+  --brand-leading-relaxed: 1.65;
+  --brand-tracking-tight: -0.035em;
+  --brand-tracking-normal: 0;
+  --brand-tracking-wide: 0.04em;
+
+  /* Spacing: 4px base, used by Tailwind's numeric spacing utilities too. */
+  --brand-space-1: 4px;
+  --brand-space-2: 8px;
+  --brand-space-3: 12px;
+  --brand-space-4: 16px;
+  --brand-space-5: 20px;
+  --brand-space-6: 24px;
+  --brand-space-8: 32px;
+  --brand-space-10: 40px;
+  --brand-space-12: 48px;
+
+  /* Shape */
+  --brand-radius-xs: 4px;
+  --brand-radius-sm: 8px;
+  --brand-radius-md: 12px;
+  --brand-radius-lg: 16px;
+  --brand-radius-xl: 20px;
+  --brand-radius-2xl: 24px;
   --brand-radius-pill: 999px;
 
+  /* Cubyt brand gradient */
+  --brand-gradient-from: #35c993;
+  --brand-gradient-via: #68abf4;
+  --brand-gradient-to: #e2b1ee;
+  --brand-gradient: linear-gradient(105deg, var(--brand-gradient-from), var(--brand-gradient-via) 54%, var(--brand-gradient-to));
+  --brand-gradient-soft: linear-gradient(105deg, color-mix(in srgb, var(--brand-gradient-from) 11%, var(--ui-surface)), color-mix(in srgb, var(--brand-gradient-via) 9%, var(--ui-surface)) 54%, color-mix(in srgb, var(--brand-gradient-to) 11%, var(--ui-surface)));
+
+  /* Surfaces and text */
   --ui-canvas: #ffffff;
+  --ui-canvas-soft: #f5f6f8;
+  --ui-chat-canvas: #f5f6f8;
   --ui-surface: #ffffff;
-  --ui-surface-soft: #f5f7fa;
-  --ui-surface-raised: #f2f3f5;
-  --ui-ink: #111827;
+  --ui-surface-soft: #f5f6f8;
+  --ui-surface-raised: #eef1f4;
+  --ui-ink: #1f2937;
   --ui-ink-strong: #111111;
   --ui-muted: #647084;
   --ui-subtle: #7d8795;
-  --ui-border: #e5e9ee;
+  --ui-border: #e2e7ed;
   --ui-border-subtle: rgb(17 24 39 / 8%);
-  --ui-accent: #12684f;
+  --ui-hover: rgb(17 24 39 / 6%);
+  --ui-hover-strong: rgb(17 24 39 / 10%);
+  --ui-sidebar-hover: rgb(17 24 39 / 10%);
+  --ui-selected: #e8ebef;
+  --ui-selected-ink: #111827;
+  --ui-tooltip: #17191e;
+  --ui-tooltip-ink: #ffffff;
+  --ui-overlay: rgb(17 24 39 / 62%);
+  --ui-overlay-hover: rgb(17 24 39 / 78%);
+  --ui-on-overlay: #ffffff;
+  --ui-media-canvas: #000000;
+  --ui-lightbox-scrim: rgb(0 0 0 / 92%);
+  --ui-lightbox-ink: rgb(255 255 255 / 80%);
+
+  /* Actions and focus */
+  --ui-accent: #35c993;
+  --ui-accent-strong: #238765;
+  --ui-accent-soft: rgb(53 201 147 / 10%);
+  --ui-accent-border: rgb(53 201 147 / 32%);
   --ui-action: #111111;
-  --ui-action-hover: #343434;
+  --ui-action-hover: #292c31;
   --ui-on-action: #ffffff;
+  --ui-on-accent: #10251d;
+  --ui-on-accent-strong: #ffffff;
+  --ui-focus-ring: rgb(76 158 245 / 52%);
 
-  --ui-discord: #5865f2;
-  --ui-google-blue: #4285f4;
-  --ui-google-red: #ea4335;
-  --ui-google-yellow: #fbbc05;
-  --ui-google-green: #34a853;
-  --ui-status-warning: #d18b62;
-  --ui-status-success: #57ad86;
+  /* Fields */
+  --ui-field: #ffffff;
+  --ui-field-border: #e2e7ed;
+  --ui-field-hover: #cbd3dd;
 
-  --ui-accent-soft: #f7fdf9;
-  --ui-accent-border: #c8ebd6;
-  --ui-accent-strong: #1f7a4d;
+  /* Status colors */
   --ui-danger: #b42318;
   --ui-danger-hover: #912018;
   --ui-danger-soft: #fef3f2;
   --ui-danger-border: rgb(240 68 56 / 20%);
   --ui-danger-ink: #912018;
-  --ui-warning: #b54708;
-  --ui-warning-soft: #fffaeb;
-  --ui-warning-border: #fedf89;
+  --ui-warning: #a95b08;
+  --ui-warning-soft: #fff7e8;
+  --ui-warning-border: #f1d5a7;
   --ui-info: #3d5bd9;
-  --ui-info-soft: #f7f8fc;
-  --ui-info-border: #dfe4f7;
-  --ui-field: #fafafa;
-  --ui-field-border: rgb(0 0 0 / 8%);
-  --ui-scrim: rgb(17 17 17 / 40%);
-  --ui-shadow-overlay: 0 16px 40px rgb(0 0 0 / 13%);
+  --ui-info-soft: #f3f6ff;
+  --ui-info-border: #d8e0fc;
+  --ui-status-success: #238765;
+  --ui-status-warning: #a95b08;
+
+  /* Overlay, elevation, and motion */
+  --ui-scrim: transparent;
+  --ui-shadow-sm: 0 2px 8px rgb(17 24 39 / 6%);
+  --ui-shadow-md: 0 8px 24px rgb(17 24 39 / 9%);
+  --ui-shadow-overlay: 0 18px 48px rgb(17 24 39 / 14%);
+  --ui-z-dropdown: 1000;
+  --ui-z-tooltip: 1100;
+  --ui-z-toast: 1200;
+  --ui-z-modal: 2147482000;
+  --brand-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --brand-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --brand-duration-fast: 120ms;
+  --brand-duration-normal: 180ms;
+  --brand-duration-slow: 260ms;
+
+  /* Integrations */
+  --ui-discord: #5865f2;
+  --ui-google-blue: #4285f4;
+  --ui-google-red: #ea4335;
+  --ui-google-yellow: #fbbc05;
+  --ui-google-green: #34a853;
 }
 
-/* Explicit theme selection: set data-theme on the document root. Omit it or use system to follow the OS. */
 :root[data-theme="light"] { color-scheme: light; }
+
 :root[data-theme="dark"] {
-    color-scheme: dark;
-
-    --ui-canvas: #14171d;
-    --ui-surface: #1f222a;
-    --ui-surface-soft: #20252e;
-    --ui-surface-raised: #30343d;
-    --ui-ink: #e6e9ef;
-    --ui-ink-strong: #f1f3f7;
-    --ui-muted: #b8c0cd;
-    --ui-subtle: #929baa;
-    --ui-border: rgb(255 255 255 / 14%);
-    --ui-border-subtle: rgb(255 255 255 / 9%);
-    --ui-accent: #55c69a;
-    --ui-action: #30343d;
-    --ui-action-hover: #414751;
-
-    --ui-accent-soft: rgb(85 198 154 / 8%);
-    --ui-accent-border: rgb(85 198 154 / 28%);
-    --ui-accent-strong: #7fd8b4;
-    --ui-danger: #e5484d;
-    --ui-danger-hover: #f2555a;
-    --ui-danger-soft: rgb(229 72 77 / 12%);
-    --ui-danger-border: rgb(229 72 77 / 32%);
-    --ui-danger-ink: #ff9592;
-    --ui-warning: #f5a524;
-    --ui-warning-soft: rgb(245 165 36 / 12%);
-    --ui-warning-border: rgb(245 165 36 / 30%);
-    --ui-info: #8da4ef;
-    --ui-info-soft: rgb(141 164 239 / 10%);
-    --ui-info-border: rgb(141 164 239 / 26%);
-    --ui-field: #181b22;
-    --ui-field-border: rgb(255 255 255 / 12%);
-    --ui-scrim: rgb(0 0 0 / 60%);
-    --ui-shadow-overlay: 0 16px 48px rgb(0 0 0 / 50%);
+  color-scheme: dark;
+  --ui-canvas: #14171d;
+  --ui-canvas-soft: #181b22;
+  --ui-chat-canvas: #14171d;
+  --ui-surface: #1d222b;
+  --ui-surface-soft: #222832;
+  --ui-surface-raised: #303641;
+  --ui-ink: #d7dce5;
+  --ui-ink-strong: #f2f4f7;
+  --ui-muted: #a7b0bf;
+  --ui-subtle: #8994a5;
+  --ui-border: rgb(255 255 255 / 13%);
+  --ui-border-subtle: rgb(255 255 255 / 9%);
+  --ui-hover: rgb(255 255 255 / 8%);
+  --ui-hover-strong: rgb(255 255 255 / 13%);
+  --ui-sidebar-hover: rgb(255 255 255 / 13%);
+  --ui-selected: #343a45;
+  --ui-selected-ink: #f2f4f7;
+  --ui-tooltip: #f2f4f7;
+  --ui-tooltip-ink: #17191e;
+  --ui-overlay: rgb(0 0 0 / 72%);
+  --ui-overlay-hover: rgb(0 0 0 / 84%);
+  --ui-on-overlay: #ffffff;
+  --ui-media-canvas: #000000;
+  --ui-lightbox-scrim: rgb(0 0 0 / 94%);
+  --ui-lightbox-ink: rgb(255 255 255 / 84%);
+  --ui-accent: #52d2a4;
+  --ui-accent-strong: #79dfba;
+  --ui-accent-soft: rgb(82 210 164 / 11%);
+  --ui-accent-border: rgb(82 210 164 / 28%);
+  --ui-action: #303641;
+  --ui-action-hover: #3c434f;
+  --ui-on-action: #f7f8fa;
+  --ui-on-accent: #10251d;
+  --ui-on-accent-strong: #14171d;
+  --ui-focus-ring: rgb(112 174 255 / 58%);
+  --ui-field: #181b22;
+  --ui-field-border: rgb(255 255 255 / 14%);
+  --ui-field-hover: rgb(255 255 255 / 24%);
+  --ui-danger: #f2555a;
+  --ui-danger-hover: #ff6b70;
+  --ui-danger-soft: rgb(229 72 77 / 13%);
+  --ui-danger-border: rgb(229 72 77 / 32%);
+  --ui-danger-ink: #ffaaa8;
+  --ui-warning: #f5b94c;
+  --ui-warning-soft: rgb(245 185 76 / 12%);
+  --ui-warning-border: rgb(245 185 76 / 28%);
+  --ui-info: #9bb0ff;
+  --ui-info-soft: rgb(141 164 239 / 11%);
+  --ui-info-border: rgb(141 164 239 / 26%);
+  --ui-status-success: #79dfba;
+  --ui-status-warning: #f5b94c;
+  --ui-scrim: transparent;
+  --ui-shadow-sm: 0 2px 10px rgb(0 0 0 / 18%);
+  --ui-shadow-md: 0 8px 28px rgb(0 0 0 / 24%);
+  --ui-shadow-overlay: 0 18px 52px rgb(0 0 0 / 42%);
 }
 
+/* `system` follows the OS; explicit light and dark always take precedence. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]),
   :root[data-theme="system"] {
     color-scheme: dark;
-
     --ui-canvas: #14171d;
-    --ui-surface: #1f222a;
-    --ui-surface-soft: #20252e;
-    --ui-surface-raised: #30343d;
-    --ui-ink: #e6e9ef;
-    --ui-ink-strong: #f1f3f7;
-    --ui-muted: #b8c0cd;
-    --ui-subtle: #929baa;
-    --ui-border: rgb(255 255 255 / 14%);
+    --ui-canvas-soft: #181b22;
+    --ui-chat-canvas: #14171d;
+    --ui-surface: #1d222b;
+    --ui-surface-soft: #222832;
+    --ui-surface-raised: #303641;
+    --ui-ink: #d7dce5;
+    --ui-ink-strong: #f2f4f7;
+    --ui-muted: #a7b0bf;
+    --ui-subtle: #8994a5;
+    --ui-border: rgb(255 255 255 / 13%);
     --ui-border-subtle: rgb(255 255 255 / 9%);
-    --ui-accent: #55c69a;
-    --ui-action: #30343d;
-    --ui-action-hover: #414751;
-
-    --ui-accent-soft: rgb(85 198 154 / 8%);
-    --ui-accent-border: rgb(85 198 154 / 28%);
-    --ui-accent-strong: #7fd8b4;
-    --ui-danger: #e5484d;
-    --ui-danger-hover: #f2555a;
-    --ui-danger-soft: rgb(229 72 77 / 12%);
-    --ui-danger-border: rgb(229 72 77 / 32%);
-    --ui-danger-ink: #ff9592;
-    --ui-warning: #f5a524;
-    --ui-warning-soft: rgb(245 165 36 / 12%);
-    --ui-warning-border: rgb(245 165 36 / 30%);
-    --ui-info: #8da4ef;
-    --ui-info-soft: rgb(141 164 239 / 10%);
-    --ui-info-border: rgb(141 164 239 / 26%);
+    --ui-hover: rgb(255 255 255 / 8%);
+    --ui-hover-strong: rgb(255 255 255 / 13%);
+    --ui-sidebar-hover: rgb(255 255 255 / 13%);
+    --ui-selected: #343a45;
+    --ui-selected-ink: #f2f4f7;
+    --ui-tooltip: #f2f4f7;
+    --ui-tooltip-ink: #17191e;
+    --ui-overlay: rgb(0 0 0 / 72%);
+    --ui-overlay-hover: rgb(0 0 0 / 84%);
+    --ui-on-overlay: #ffffff;
+    --ui-media-canvas: #000000;
+    --ui-lightbox-scrim: rgb(0 0 0 / 94%);
+    --ui-lightbox-ink: rgb(255 255 255 / 84%);
+    --ui-accent: #52d2a4;
+    --ui-accent-strong: #79dfba;
+    --ui-accent-soft: rgb(82 210 164 / 11%);
+    --ui-accent-border: rgb(82 210 164 / 28%);
+    --ui-action: #303641;
+    --ui-action-hover: #3c434f;
+    --ui-on-action: #f7f8fa;
+    --ui-on-accent: #10251d;
+    --ui-on-accent-strong: #14171d;
+    --ui-focus-ring: rgb(112 174 255 / 58%);
     --ui-field: #181b22;
-    --ui-field-border: rgb(255 255 255 / 12%);
-    --ui-scrim: rgb(0 0 0 / 60%);
-    --ui-shadow-overlay: 0 16px 48px rgb(0 0 0 / 50%);
+    --ui-field-border: rgb(255 255 255 / 14%);
+    --ui-field-hover: rgb(255 255 255 / 24%);
+    --ui-danger: #f2555a;
+    --ui-danger-hover: #ff6b70;
+    --ui-danger-soft: rgb(229 72 77 / 13%);
+    --ui-danger-border: rgb(229 72 77 / 32%);
+    --ui-danger-ink: #ffaaa8;
+    --ui-warning: #f5b94c;
+    --ui-warning-soft: rgb(245 185 76 / 12%);
+    --ui-warning-border: rgb(245 185 76 / 28%);
+    --ui-info: #9bb0ff;
+    --ui-info-soft: rgb(141 164 239 / 11%);
+    --ui-info-border: rgb(141 164 239 / 26%);
+    --ui-status-success: #79dfba;
+    --ui-status-warning: #f5b94c;
+    --ui-scrim: transparent;
+    --ui-shadow-sm: 0 2px 10px rgb(0 0 0 / 18%);
+    --ui-shadow-md: 0 8px 28px rgb(0 0 0 / 24%);
+    --ui-shadow-overlay: 0 18px 52px rgb(0 0 0 / 42%);
   }
 }

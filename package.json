@@ -1,7 +1,7 @@
 {
   "name": "@cubyt/style",
-  "version": "1.1.0",
-  "description": "Shared CSS design tokens and brand assets for Cubyt Sas products",
+  "version": "1.2.0",
+  "description": "Official Cubyt design system: tokens, themes, typography, layout scales, gradients, form styles, and brand assets",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,11 +16,13 @@
     "./css/tokens.css",
     "./css/tailwind.css",
     "./css/brand.css",
-    "./css/forms.css"
+    "./css/forms.css",
+    "./css/base.css"
   ],
   "exports": {
     ".": "./css/tokens.css",
     "./tokens.css": "./css/tokens.css",
+    "./base.css": "./css/base.css",
     "./tailwind.css": "./css/tailwind.css",
     "./brand.css": "./css/brand.css",
     "./forms.css": "./css/forms.css",
